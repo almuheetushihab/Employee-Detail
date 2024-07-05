@@ -11,10 +11,20 @@
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/employee_cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        
+        <ImageView
+            android:id="@+id/iv_employee_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+           android:layout_margin="8dp"
+            android:src="@drawable/apon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
