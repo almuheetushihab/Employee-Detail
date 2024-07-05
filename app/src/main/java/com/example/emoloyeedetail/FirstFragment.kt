@@ -1,11 +1,15 @@
 package com.example.emoloyeedetail
 
+import EmployeeAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 
 /**
@@ -32,13 +36,33 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+        val employeeAdapter = EmployeeAdapter(dataset,this)
+
+        val recyclerView: RecyclerView = binding.employeeRecyclerView
+        recyclerView.adapter = employeeAdapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
     }
 
+   fun onItemClick(employee: Employee){
+        val bundle = bundleOf()
+        bundle.putSerializable("employee", employee)
+
+        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+
+
+
+
+
+
+
+
+
+
