@@ -34,8 +34,8 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         val employeeAdapter = EmployeeAdapter(dataset, this)
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
-        recyclerView.adapter = employeeAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = employeeAdapter
 
     }
 

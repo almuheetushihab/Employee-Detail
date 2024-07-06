@@ -51,14 +51,18 @@ class EmployeeAdapter(
     ) {
         val employee = dataset[position]
 
-        Glide.with(viewHolder.itemView.context)
+        Glide.with(viewHolder.employeeImg.context)
             .load(employee.image)
             .circleCrop()
             .into(viewHolder.employeeImg)
 
-
+        viewHolder.itemView.contentDescription = employee.name
         viewHolder.employeeName.text = employee.name
         viewHolder.employeeNum.text = employee.phone
+//        Glide.with(viewHolder.itemView.context)
+//            .load(employee.image)
+//            .into(viewHolder.employeeImg)
+
 
         viewHolder.itemView.setOnClickListener {
             listener.onItemClick(employee)

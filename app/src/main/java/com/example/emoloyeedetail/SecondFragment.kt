@@ -44,6 +44,8 @@ class SecondFragment : Fragment() {
 
         }
 
+
+
         employee?.let {
             Glide.with(requireContext())
                 .load(employee.image)
