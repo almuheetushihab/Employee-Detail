@@ -12,31 +12,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
-class FirstFragment : Fragment() {
-
-    private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
+    private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val employeeAdapter = EmployeeAdapter(dataset,this)
+        val employeeAdapter = EmployeeAdapter(dataset, this)
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
         recyclerView.adapter = employeeAdapter
@@ -44,16 +39,12 @@ class FirstFragment : Fragment() {
 
     }
 
-   fun onItemClick(employee: Employee){
+    override fun onItemClick(employee: Employee) {
         val bundle = bundleOf()
         bundle.putSerializable("employee", employee)
 
         findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
 
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
 

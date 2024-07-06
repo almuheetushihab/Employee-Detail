@@ -1,6 +1,7 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,16 +13,17 @@ import com.example.emoloyeedetail.R
 
 class EmployeeAdapter(
     private val dataset: ArrayList<Employee>,
-    private val listener: FirstFragment,
-) : RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
-    interface ItemClickListener {
-        fun onItemClick(employee: Employee)
-    }
+    private val listener: ItemClickListener
+
+) :
+    RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val employeeName : TextView
-        val employeeNum : TextView
-        val employeeImg : ImageView
+        val employeeName: TextView
+        val employeeNum: TextView
+        val employeeImg: ImageView
+
+
         init {
             employeeName = view.findViewById(R.id.tv_employee_name)
             employeeNum = view.findViewById(R.id.iv_employee_num)
@@ -31,34 +33,44 @@ class EmployeeAdapter(
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.employee_layout, parent, false)
+    override fun onCreateViewHolder(
+        viewGroup: ViewGroup,
+        viewType: Int,
+    ): ViewHolder {
+        val view =
+            LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.employee_layout, viewGroup, false)
+
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return dataset.size
-    }
 
     override fun onBindViewHolder(
-        holder: ViewHolder,
+        viewHolder: ViewHolder,
         position: Int,
-        ) {
+    ) {
         val employee = dataset[position]
-        Glide.with(holder.itemView.context)
+
+        Glide.with(viewHolder.itemView.context)
             .load(employee.image)
-            .into(holder.employeeImg)
+            .circleCrop()
+            .into(viewHolder.employeeImg)
 
 
-        holder.employeeName.text = employee.name
-        holder.employeeNum.text = employee.phone
+        viewHolder.employeeName.text = employee.name
+        viewHolder.employeeNum.text = employee.phone
 
-        holder.itemView.setOnClickListener {
+        viewHolder.itemView.setOnClickListener {
             listener.onItemClick(employee)
         }
 
     }
 
+    override fun getItemCount(): Int {
+        return dataset.size
+    }
+    interface ItemClickListener {
+        fun onItemClick(employee: Employee)
+    }
 
 }
