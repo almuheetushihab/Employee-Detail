@@ -1,14 +1,12 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 import com.example.emoloyeedetail.Employee
-import com.example.emoloyeedetail.FirstFragment
 import com.example.emoloyeedetail.R
 
 class EmployeeAdapter(
@@ -51,17 +49,14 @@ class EmployeeAdapter(
     ) {
         val employee = dataset[position]
 
-        Glide.with(viewHolder.employeeImg.context)
+        Glide.with(viewHolder.itemView.context)
             .load(employee.image)
             .circleCrop()
             .into(viewHolder.employeeImg)
 
-        viewHolder.itemView.contentDescription = employee.name
         viewHolder.employeeName.text = employee.name
         viewHolder.employeeNum.text = employee.phone
-//        Glide.with(viewHolder.itemView.context)
-//            .load(employee.image)
-//            .into(viewHolder.employeeImg)
+
 
 
         viewHolder.itemView.setOnClickListener {

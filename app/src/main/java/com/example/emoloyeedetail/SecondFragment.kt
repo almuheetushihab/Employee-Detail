@@ -26,7 +26,7 @@ class SecondFragment : Fragment() {
 
     }
 
-    @SuppressLint("NewApi")
+
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?,
@@ -39,9 +39,7 @@ class SecondFragment : Fragment() {
                 "employee",
                 Employee::class.java
             )
-
             else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
-
         }
 
 
@@ -49,7 +47,8 @@ class SecondFragment : Fragment() {
         employee?.let {
             Glide.with(requireContext())
                 .load(employee.image)
-                .into(binding.ivEmployeeImg)
+                .circleCrop()
+                .into(binding.ivEmployeeImgId)
 
             binding.tvEmployeeName.text = employee.name
             binding.tvEmployeePhone.text = employee.phone

@@ -47,4 +47,5 @@
     <string name="textviews">TextView</string>
     <string name="sss">TextView</string>
     <string name="employee_img">employee_img</string>
+    <string name="employee_profile_image">Employee profile image</string>
 </resources>
