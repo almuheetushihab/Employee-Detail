@@ -2,10 +2,10 @@ package com.example.emoloyeedetail
 
 val dataset = arrayListOf(
     Employee(
-        name = "John Doe",
-        phone = "+7483874902",
-        image = "https://images.unsplash.com/photo-1676195470090-7c90bf539b3b?q=80&w=320",
-        email = "john@gmail.com",
+        name = "Almuheetu Shihab",
+        phone = "01789803342",
+        image = "https://media.licdn.com/dms/image/D4E03AQEg-SAWcvS1Bw/profile-displayphoto-shrink_800_800/0/1695418993414?e=2147483647&v=beta&t=WK3ijl7cgormDPUwBmzezJlaeW9oIMuFgdzWEI3Mhq0",
+        email = "almuheetu@gmail.com",
         address = "Dhaka",
         jobTitle = "Software Engineer",
         salary = "50000"

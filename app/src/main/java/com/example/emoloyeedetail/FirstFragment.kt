@@ -41,6 +41,7 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
 
     override fun onItemClick(employee: Employee) {
         val bundle = bundleOf()
+
         bundle.putSerializable("employee", employee)
 
         findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
