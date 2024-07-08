@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/iv_employee_img_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/employee_profile_image"
             android:src="@drawable/employee_details"
