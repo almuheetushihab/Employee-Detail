@@ -33,17 +33,17 @@ class SecondFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val employee = when {
+//        val employee = when {
+//
+//            Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> arguments?.getSerializable(
+//                "employee",
+//                Employee::class.java
+//            )
+//
+//            else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
+//        }
 
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> arguments?.getSerializable(
-                "employee",
-                Employee::class.java
-            )
-
-            else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
-        }
-
-
+val employee = arguments?.getSerializable("employee") as? Employee
 
         employee?.let {
             Glide.with(requireContext())
