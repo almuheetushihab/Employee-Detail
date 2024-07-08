@@ -39,6 +39,7 @@ class SecondFragment : Fragment() {
                 "employee",
                 Employee::class.java
             )
+
             else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
         }
 

@@ -13,7 +13,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/employee_cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray">
 
         <ImageView
             android:id="@+id/iv_employee_img"
@@ -32,8 +33,10 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="24sp"
+            android:textColor="@color/SeaShell"
+            android:fontFamily="@font/font"
             android:layout_marginTop="22dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_employee_img"
             app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +48,9 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="24sp"
-            android:layout_marginStart="8dp"
+            android:textColor="@color/SeaShell"
+            android:fontFamily="@font/font"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_employee_img"
