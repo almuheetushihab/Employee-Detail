@@ -1,3 +1,5 @@
+package com.example.emoloyeedetail
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,14 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-import com.example.emoloyeedetail.Employee
-import com.example.emoloyeedetail.R
-
 class EmployeeAdapter(
     private val dataset: ArrayList<Employee>,
-    private val listener: ItemClickListener
+    private val listener: ItemClickListener,
 
-) :
+
+
+    ) :
     RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -40,6 +41,8 @@ class EmployeeAdapter(
             .inflate(R.layout.employee_layout, viewGroup, false)
 
         return ViewHolder(view)
+
+
     }
 
 
@@ -47,15 +50,20 @@ class EmployeeAdapter(
         viewHolder: ViewHolder,
         position: Int,
     ) {
+
+
         val employee = dataset[position]
+
 
         Glide.with(viewHolder.itemView.context)
             .load(employee.image)
             .circleCrop()
             .into(viewHolder.employeeImg)
 
+
         viewHolder.employeeName.text = employee.name
         viewHolder.employeeNum.text = employee.phone
+
 
 
 
@@ -70,6 +78,7 @@ class EmployeeAdapter(
     }
     interface ItemClickListener {
         fun onItemClick(employee: Employee)
+
     }
 
 }

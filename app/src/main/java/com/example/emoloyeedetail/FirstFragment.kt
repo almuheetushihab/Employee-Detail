@@ -1,18 +1,17 @@
 package com.example.emoloyeedetail
 
-import EmployeeAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
+
     private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
@@ -40,13 +39,23 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     }
 
     override fun onItemClick(employee: Employee) {
+        val action =
+            FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayOf("employee"))
+        findNavController().navigate(action)
 
-        val bundle = bundleOf()
+//         FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayListOf(dataset[position]))
+//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        val bundle = bundleOf("employee" to employee)
+//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
 
-        bundle.putSerializable("employee", employee)
 
+//        val bundle = bundleOf()
+//
+//        bundle.putSerializable("employee", employee)
+//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+//        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayOf("employee"))
+//        findNavController().navigate(action)
 
-        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
 
     }
 }

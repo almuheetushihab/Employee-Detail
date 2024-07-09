@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.androidx.navigation.safe.arg)
 }
+
 
 android {
     namespace = "com.example.emoloyeedetail"
@@ -50,4 +52,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+//    implementation ("androidx.navigation:navigation-fragment-ktx:2.4.0")
+//    implementation ("androidx.navigation:navigation-ui-ktx:2.4.0")
 }
+
+

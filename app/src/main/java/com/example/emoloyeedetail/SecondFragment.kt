@@ -8,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.emoloyeedetail.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
+    val args: SecondFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +44,14 @@ class SecondFragment : Fragment() {
 //
 //            else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
 //        }
+//
+        super.onViewCreated(view, savedInstanceState)
+        val employee = ArrayList<Employee>()
 
-val employee = arguments?.getSerializable("employee") as? Employee
+
+//        val employee = arguments?.getSerializable("employee")as? Employee
+//        val employee = args.employee
+//        val employee = arguments?.getSerializable("employee") as? Employee
 
         employee?.let {
             Glide.with(requireContext())
