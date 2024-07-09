@@ -13,9 +13,9 @@ import com.bumptech.glide.Glide
 import com.example.emoloyeedetail.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
-
-    private lateinit var binding: FragmentSecondBinding
     val args: SecondFragmentArgs by navArgs()
+    private lateinit var binding: FragmentSecondBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,18 +46,19 @@ class SecondFragment : Fragment() {
 //        }
 //
         super.onViewCreated(view, savedInstanceState)
-        val employee = ArrayList<Employee>()
+
+        val employee = args.data
 
 
 //        val employee = arguments?.getSerializable("employee")as? Employee
-//        val employee = args.employee
-//        val employee = arguments?.getSerializable("employee") as? Employee
 
-        employee?.let {
+
+        employee.let {
             Glide.with(requireContext())
                 .load(employee.image)
                 .circleCrop()
                 .into(binding.ivEmployeeImgId)
+
 
             binding.tvEmployeeName.text = employee.name
             binding.tvEmployeePhone.text = employee.phone

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
@@ -39,22 +40,16 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     }
 
     override fun onItemClick(employee: Employee) {
-        val action =
-            FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayOf("employee"))
-        findNavController().navigate(action)
 
-//         FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayListOf(dataset[position]))
-//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        val bundle = bundleOf("employee" to employee)
-//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
+        findNavController().navigate(action)
 
 
 //        val bundle = bundleOf()
 //
 //        bundle.putSerializable("employee", employee)
 //        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
-//        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(arrayOf("employee"))
-//        findNavController().navigate(action)
+
 
 
     }
