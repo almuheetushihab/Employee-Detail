@@ -13,7 +13,6 @@ class EmployeeAdapter(
     private val listener: ItemClickListener,
 
 
-
     ) :
     RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -38,7 +37,7 @@ class EmployeeAdapter(
     ): ViewHolder {
         val view =
             LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.employee_layout, viewGroup, false)
+                .inflate(R.layout.employee_layout, viewGroup, false)
 
         return ViewHolder(view)
 
@@ -51,9 +50,7 @@ class EmployeeAdapter(
         position: Int,
     ) {
 
-
         val employee = dataset[position]
-
 
         Glide.with(viewHolder.itemView.context)
             .load(employee.image)
@@ -65,8 +62,6 @@ class EmployeeAdapter(
         viewHolder.employeeNum.text = employee.phone
 
 
-
-
         viewHolder.itemView.setOnClickListener {
             listener.onItemClick(employee)
         }
@@ -76,6 +71,7 @@ class EmployeeAdapter(
     override fun getItemCount(): Int {
         return dataset.size
     }
+
     interface ItemClickListener {
         fun onItemClick(employee: Employee)
 
