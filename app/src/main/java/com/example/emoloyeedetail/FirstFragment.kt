@@ -43,6 +43,14 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
 
+
+//        val bundle = bundleOf()
+//
+//        bundle.putSerializable("employee", employee)
+//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+
+
+
     }
 }
 
