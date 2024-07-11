@@ -43,9 +43,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
 
-
-
-
     }
 }
 
