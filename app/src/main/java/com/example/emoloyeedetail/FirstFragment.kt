@@ -9,8 +9,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
+import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
+    private lateinit var viewModel: EmployeeViewModel
 
     private lateinit var binding: FragmentFirstBinding
 
@@ -18,7 +20,7 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        viewModel = EmployeeViewModel()
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -30,7 +32,8 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val employeeAdapter = EmployeeAdapter(dataset, this)
+        val employeeAdapter = EmployeeAdapter(viewModel.getEmployees(), this)
+
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
