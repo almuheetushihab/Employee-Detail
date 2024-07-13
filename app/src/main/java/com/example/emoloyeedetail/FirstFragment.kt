@@ -53,6 +53,7 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         findNavController().navigate(action)
 
 
+
 //        val bundle = bundleOf()
 //
 //        bundle.putSerializable("employee", employee)

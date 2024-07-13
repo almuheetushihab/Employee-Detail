@@ -48,4 +48,6 @@
     <string name="sss">TextView</string>
     <string name="employee_img">employee_img</string>
     <string name="employee_profile_image">Employee profile image</string>
+    <string name="textviewss">TextView</string>
+    <string name="button">Button</string>
 </resources>
