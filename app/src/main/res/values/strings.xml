@@ -50,5 +50,5 @@
     <string name="employee_profile_image">Employee profile image</string>
     <string name="textviewss">TextView</string>
     <string name="button">Button</string>
-    <string name="data_found">Data Found</string>
+    <string name="data_found">Data Not Found…</string>
 </resources>
