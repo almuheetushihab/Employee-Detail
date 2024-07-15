@@ -66,6 +66,7 @@ class EmployeeAdapter(
             listener.onItemClick(employee)
         }
 
+
     }
 
     override fun getItemCount(): Int {
