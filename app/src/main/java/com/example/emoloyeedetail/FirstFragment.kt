@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,9 @@ import com.example.emoloyeedetail.viewmodel.NameViewModel
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     private lateinit var viewModel: EmployeeViewModel
     private lateinit var nameViewModel: NameViewModel
+
+
+
 
     private lateinit var binding: FragmentFirstBinding
 
@@ -34,10 +38,18 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
+        nameViewModel.currentName.observe(viewLifecycleOwner) {
+            binding.emptyView.text = it
+
+        }
+
+
+        nameViewModel.currentName.value = "New employee Name Almuheetu Shihab"
 
         val employeeAdapter = EmployeeAdapter(viewModel.getEmployees(), this)
 
-        nameViewModel.currentName.value = "Almuheetu Shihab"
+
+
 
 
 
