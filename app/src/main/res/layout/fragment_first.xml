@@ -10,14 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/employee_recycler_view"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_sample"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:text="click me"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
+
 
         <TextView
             android:id="@+id/empty_view"
@@ -28,8 +29,19 @@
             android:text=""
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sample"
             tools:text="New employees name found" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employee_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/empty_view" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

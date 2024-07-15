@@ -1,6 +1,7 @@
 package com.example.emoloyeedetail
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 import com.example.emoloyeedetail.viewmodel.NameViewModel
+import kotlinx.coroutines.Delay
 
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     private lateinit var viewModel: EmployeeViewModel
@@ -38,20 +40,26 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        nameViewModel.currentName.observe(viewLifecycleOwner) {
-            binding.emptyView.text = it
 
+        val nameObserver = Observer<String>{newName ->
+            binding.emptyView.text = newName
+        }
+        nameViewModel.currentName.observe(viewLifecycleOwner, nameObserver)
+
+        binding.btnSample.setOnClickListener {
+              nameViewModel.setName("JohnDoe")
         }
 
 
-        nameViewModel.currentName.value = "New employee Name Almuheetu Shihab"
+//        nameViewModel.currentName.observe(viewLifecycleOwner) {
+//            binding.emptyView.text = it
+//
+//        }
+//        nameViewModel.currentName.value = "New employee Name Almuheetu Shihab"
+
+
 
         val employeeAdapter = EmployeeAdapter(viewModel.getEmployees(), this)
-
-
-
-
-
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
