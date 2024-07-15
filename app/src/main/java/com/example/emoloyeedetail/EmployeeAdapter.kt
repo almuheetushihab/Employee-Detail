@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class EmployeeAdapter(
-    private val dataset: ArrayList<Employee>,
+    private var dataset: ArrayList<Employee>,
     private val listener: ItemClickListener,
 
 
@@ -78,5 +78,9 @@ class EmployeeAdapter(
 
 
     }
+//    fun updateItems(newItems: List<Employee>) {
+//        dataset = newItems as ArrayList<Employee>
+//        notifyDataSetChanged()
+//    }
 
 }
