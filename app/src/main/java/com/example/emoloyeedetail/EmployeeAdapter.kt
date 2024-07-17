@@ -79,9 +79,5 @@ class EmployeeAdapter(
 
 
     }
-//    fun updateItems(newItems: List<Employee>) {
-//        dataset = newItems as ArrayList<Employee>
-//        notifyDataSetChanged()
-//    }
 
 }

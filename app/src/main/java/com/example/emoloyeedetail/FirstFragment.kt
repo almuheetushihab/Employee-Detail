@@ -33,7 +33,7 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         viewModel = EmployeeViewModel()
         model.items.observe(viewLifecycleOwner, Observer {
 
-            binding.employeeRecyclerView.adapter = EmployeeAdapter(it, this)
+            binding.employeeRecyclerView.adapter = EmployeeAdapter(dataset, this)
         })
 
 //        nameViewModel = NameViewModel()
