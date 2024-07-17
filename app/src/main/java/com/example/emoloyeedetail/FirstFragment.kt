@@ -21,7 +21,7 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
 //    private lateinit var nameViewModel: NameViewModel
 
     private val model: MyViewModel by viewModels()
-   private lateinit var adapter: EmployeeAdapter
+    private lateinit var adapter: EmployeeAdapter
 
     private lateinit var binding: FragmentFirstBinding
 
@@ -31,13 +31,11 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         savedInstanceState: Bundle?
     ): View {
         viewModel = EmployeeViewModel()
-        model.items.observe(viewLifecycleOwner, Observer{
-            binding.employeeRecyclerView.adapter = EmployeeAdapter(dataset, this)
+        model.items.observe(viewLifecycleOwner, Observer {
+
+            binding.employeeRecyclerView.adapter = EmployeeAdapter(it, this)
         })
 
-        model.addItem("New item")
-        val newList = arrayListOf("New item")
-        model.setItems(newList)
 //        nameViewModel = NameViewModel()
 
         binding = FragmentFirstBinding.inflate(inflater, container, false)
@@ -51,27 +49,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-//        val nameObserver = Observer<String>{newName ->
-//            binding.emptyView.text = newName
-//        }
-//        nameViewModel.currentName.observe(viewLifecycleOwner, nameObserver)
-//
-//        binding.btnSample.setOnClickListener {
-//
-//              nameViewModel.setName("JohnDoe")
-//        }
-
-
-//        nameViewModel.currentName.observe(viewLifecycleOwner) {
-//            binding.emptyView.text = it
-//
-//        }
-//        nameViewModel.currentName.value = "New employee Name Almuheetu Shihab"
-
-
-
         val employeeAdapter = EmployeeAdapter(viewModel.getEmployees(), this)
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
@@ -82,13 +59,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         adapter = EmployeeAdapter(viewModel.getEmployees(), this)
         binding.employeeRecyclerView.adapter = adapter
 
-        model.addItem("New item")
-        val dataset = arrayListOf("New item")
-        model.setItems(dataset)
-
-
-
-
 
     }
 
@@ -96,15 +66,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
 
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
-
-
-
-//        val bundle = bundleOf()
-//
-//        bundle.putSerializable("employee", employee)
-//        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
-
-
 
     }
 }
