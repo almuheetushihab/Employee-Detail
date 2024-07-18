@@ -26,13 +26,18 @@ import com.example.emoloyeedetail.dataset
 
 
 
-class MyViewModel: ViewModel() {
-    private val _items = MutableLiveData<ArrayList<Employee>>()
-    val items: LiveData<ArrayList<Employee>> get() = _items
-
-
-
-    fun getItems(): ArrayList<Employee> {
-        _items.value =
-    }
-}
+//class MyViewModel: ViewModel() {
+//    private val _items = MutableLiveData<ArrayList<Employee>>()
+//    val items: LiveData<ArrayList<Employee>> get() = _items
+//
+//    fun setItems() {
+//        _items.value = dataset
+//
+//        val handler = Handler()
+//        handler.postDelayed({
+//
+//            _items.value = dataset
+//
+//        }, 2000)
+//    }
+//}

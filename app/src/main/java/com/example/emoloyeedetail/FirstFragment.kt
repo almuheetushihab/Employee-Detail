@@ -13,29 +13,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
-import com.example.emoloyeedetail.viewmodel.MyViewModel
+
 import kotlinx.coroutines.Delay
 
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
-    private lateinit var viewModel: EmployeeViewModel
-//    private lateinit var nameViewModel: NameViewModel
-
-    private val model: MyViewModel by viewModels()
+    private val viewModel: EmployeeViewModel by viewModels()
     private lateinit var adapter: EmployeeAdapter
-
     private lateinit var binding: FragmentFirstBinding
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        viewModel = EmployeeViewModel()
-//        nameViewModel = NameViewModel()
+        adapter = EmployeeAdapter(dataset, this)
 
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(
@@ -44,15 +37,18 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = EmployeeAdapter(viewModel.getEmployees(), this)
-        binding.employeeRecyclerView.adapter = adapter
         val recyclerView: RecyclerView = binding.employeeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
-        model.items.observe(viewLifecycleOwner, Observer{
-            binding.employeeRecyclerView.adapter = EmployeeAdapter(dataset, this)
+        viewModel.items.observe(viewLifecycleOwner, Observer {
+            viewModel.setItems()
+
         })
+        Handler().postDelayed({
+            binding.employeeRecyclerView.visibility = View.GONE
+            binding.employeeRecyclerView.visibility = View.VISIBLE
+        }, 3000)
 
     }
 
