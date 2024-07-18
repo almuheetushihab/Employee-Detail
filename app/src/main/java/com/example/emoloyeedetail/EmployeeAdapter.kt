@@ -40,6 +40,7 @@ class EmployeeAdapter(
             LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.employee_layout, viewGroup, false)
 
+
         return ViewHolder(view)
 
 

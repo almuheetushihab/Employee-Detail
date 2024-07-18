@@ -14,14 +14,12 @@ class EmployeeViewModel : ViewModel() {
     private val _items = MutableLiveData<ArrayList<Employee>>()
     val items: LiveData<ArrayList<Employee>> get() = _items
 
-    fun setItems() {
-        _items.value = dataset
+    fun getItems() {
+        val handler = Handler()
+        handler.postDelayed({
 
-//        val handler = Handler()
-//        handler.postDelayed({
-//
-//            _items.value = dataset
-//
-//        }, 2000)
+            _items.value = dataset
+
+        }, 2000)
     }
 }

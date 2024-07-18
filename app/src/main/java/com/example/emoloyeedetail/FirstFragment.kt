@@ -26,7 +26,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        adapter = EmployeeAdapter(dataset, this)
 
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
@@ -40,18 +39,14 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
 
         val recyclerView: RecyclerView = binding.employeeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
 
+        viewModel.getItems()
         viewModel.items.observe(viewLifecycleOwner, Observer {
-            viewModel.setItems()
-        })
-
-        Handler().postDelayed({
-            binding.employeeRecyclerView.visibility = View.GONE
+            adapter = EmployeeAdapter(it, this)
+            recyclerView.adapter = adapter
+            binding.loadingId.root.visibility = View.GONE
             binding.employeeRecyclerView.visibility = View.VISIBLE
-
-        }, 2000)
-
+        })
 
     }
 
