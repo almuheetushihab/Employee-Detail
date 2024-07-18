@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.Visibility
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 
@@ -43,12 +44,14 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
 
         viewModel.items.observe(viewLifecycleOwner, Observer {
             viewModel.setItems()
-
         })
+
         Handler().postDelayed({
             binding.employeeRecyclerView.visibility = View.GONE
             binding.employeeRecyclerView.visibility = View.VISIBLE
-        }, 3000)
+
+        }, 2000)
+
 
     }
 
