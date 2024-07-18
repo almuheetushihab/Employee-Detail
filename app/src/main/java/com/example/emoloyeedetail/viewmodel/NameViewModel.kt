@@ -27,12 +27,12 @@ import com.example.emoloyeedetail.dataset
 
 
 class MyViewModel: ViewModel() {
-    private val _items = MutableLiveData<ArrayList<String>>()
-    val items: LiveData<ArrayList<String>> get() = _items
+    private val _items = MutableLiveData<ArrayList<Employee>>()
+    val items: LiveData<ArrayList<Employee>> get() = _items
 
 
 
-    fun getItems(): ArrayList<String> {
+    fun getItems(): ArrayList<Employee> {
         _items.value =
     }
 }

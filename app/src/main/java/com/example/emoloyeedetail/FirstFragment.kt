@@ -31,11 +31,6 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
         savedInstanceState: Bundle?
     ): View {
         viewModel = EmployeeViewModel()
-        model.items.observe(viewLifecycleOwner, Observer {
-
-            binding.employeeRecyclerView.adapter = EmployeeAdapter(dataset, this)
-        })
-
 //        nameViewModel = NameViewModel()
 
         binding = FragmentFirstBinding.inflate(inflater, container, false)
@@ -49,16 +44,15 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val employeeAdapter = EmployeeAdapter(viewModel.getEmployees(), this)
-
-        val recyclerView: RecyclerView = binding.employeeRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = employeeAdapter
-
-
         adapter = EmployeeAdapter(viewModel.getEmployees(), this)
         binding.employeeRecyclerView.adapter = adapter
+        val recyclerView: RecyclerView = binding.employeeRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
 
+        model.items.observe(viewLifecycleOwner, Observer{
+            binding.employeeRecyclerView.adapter = EmployeeAdapter(dataset, this)
+        })
 
     }
 
