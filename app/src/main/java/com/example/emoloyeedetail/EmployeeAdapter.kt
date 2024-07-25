@@ -54,6 +54,8 @@ class EmployeeAdapter(
         viewHolder.employeeName.text = employee.name
         viewHolder.employeeNum.text = employee.phone
 
+
+
         viewHolder.itemView.setOnClickListener {
             listener.onItemClick(employee)
         }
