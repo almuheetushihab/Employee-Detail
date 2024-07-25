@@ -6,30 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-
-    <!--        <Button-->
-    <!--            android:id="@+id/btn_sample"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="click me"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            />-->
-
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/empty_view"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginTop="20dp"-->
-    <!--            android:textAlignment="center"-->
-    <!--            android:text=""-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintTop_toBottomOf="@+id/btn_sample"-->
-    <!--            tools:text="New employees name found" />-->
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/employee_recycler_view"
         android:layout_width="match_parent"
@@ -39,6 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--    <include-->
+<!--        android:id="@+id/division_id"-->
+<!--        layout="@layout/division_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
 
     <include
         android:id="@+id/loading_id"

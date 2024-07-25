@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
-    android:layout_marginEnd="16dp">
+    android:layout_marginEnd="16dp"
+    app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/division_cardView"
@@ -18,15 +19,14 @@
         <TextView
             android:id="@+id/tv_employee_division_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="32sp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/font"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:textColor="@color/SeaShell"
-            android:fontFamily="@font/font"
+            android:text=""
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

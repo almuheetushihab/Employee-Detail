@@ -12,8 +12,6 @@ import com.bumptech.glide.Glide
 class EmployeeAdapter(
     private var dataset: ArrayList<Employee>,
     private val listener: ItemClickListener,
-
-
     ) :
     RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -28,7 +26,6 @@ class EmployeeAdapter(
             employeeNum = view.findViewById(R.id.iv_employee_num)
             employeeImg = view.findViewById(R.id.iv_employee_img)
         }
-//        val textView: TextView = view.findViewById(R.id.tv_employee_name)
     }
 
 
