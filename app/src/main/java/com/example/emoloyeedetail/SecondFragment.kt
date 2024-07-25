@@ -1,4 +1,5 @@
 package com.example.emoloyeedetail
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +13,6 @@ class SecondFragment : Fragment() {
     private val args: SecondFragmentArgs by navArgs()
     private lateinit var binding: FragmentSecondBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,9 +21,7 @@ class SecondFragment : Fragment() {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
-
     }
-
 
     override fun onViewCreated(
         view: View,
@@ -31,30 +29,12 @@ class SecondFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val employee = when {
-//
-//            Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> arguments?.getSerializable(
-//                "employee",
-//                Employee::class.java
-//            )
-//
-//            else -> @Suppress("DEPRECATION") arguments?.getSerializable("employee") as? Employee
-//        }
-//
-        super.onViewCreated(view, savedInstanceState)
-
         val employee = args.data
-
-
-//        val employee = arguments?.getSerializable("employee")as? Employee
-
-
         employee.let {
             Glide.with(requireContext())
                 .load(employee.image)
                 .circleCrop()
                 .into(binding.ivEmployeeImgId)
-
 
             binding.tvEmployeeName.text = employee.name
             binding.tvEmployeePhone.text = employee.phone
@@ -62,9 +42,8 @@ class SecondFragment : Fragment() {
             binding.tvEmployeeAddress.text = employee.address
             binding.tvEmployeeJobTitle.text = employee.jobTitle
             binding.tvEmployeeSalary.text = employee.salary
+            binding.tvEmployeeDivision.text = employee.divisions
 
         }
-
     }
-
 }

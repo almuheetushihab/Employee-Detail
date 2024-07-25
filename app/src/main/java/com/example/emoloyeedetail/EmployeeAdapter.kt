@@ -40,18 +40,13 @@ class EmployeeAdapter(
             LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.employee_layout, viewGroup, false)
 
-
         return ViewHolder(view)
-
-
     }
-
 
     override fun onBindViewHolder(
         viewHolder: ViewHolder,
         position: Int,
     ) {
-
         val employee = dataset[position]
 
         Glide.with(viewHolder.itemView.context)
@@ -59,16 +54,12 @@ class EmployeeAdapter(
             .circleCrop()
             .into(viewHolder.employeeImg)
 
-
         viewHolder.employeeName.text = employee.name
         viewHolder.employeeNum.text = employee.phone
-
 
         viewHolder.itemView.setOnClickListener {
             listener.onItemClick(employee)
         }
-
-
     }
 
     override fun getItemCount(): Int {
@@ -77,8 +68,6 @@ class EmployeeAdapter(
 
     interface ItemClickListener {
         fun onItemClick(employee: Employee)
-
-
     }
 
 }

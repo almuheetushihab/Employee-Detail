@@ -8,7 +8,8 @@ val dataset = arrayListOf(
         email = "almuheetu@gmail.com",
         address = "Dhaka",
         jobTitle = "Software Engineer",
-        salary = "50000"
+        salary = "50000",
+       divisions = "Dhaka"
     ),
     Employee(
         name = "Jane Smith",
@@ -17,7 +18,8 @@ val dataset = arrayListOf(
         email = "jane@gmail.com",
         address = "Chittagong",
         jobTitle = "Project Manager",
-        salary = "60000"
+        salary = "60000",
+        divisions = "Chittagong"
     ),
     Employee(
         name = "Michael Johnson",
@@ -26,7 +28,8 @@ val dataset = arrayListOf(
         email = "michael@gmail.com",
         address = "Khulna",
         jobTitle = "Data Scientist",
-        salary = "70000"
+        salary = "70000",
+        divisions = "Khulna"
     ),
     Employee(
         name = "Emily Davis",
@@ -35,7 +38,8 @@ val dataset = arrayListOf(
         email = "emily@gmail.com",
         address = "Sylhet",
         jobTitle = "UX Designer",
-        salary = "55000"
+        salary = "55000",
+        divisions = "Sylhet"
     ),
     Employee(
         name = "Daniel Brown",
@@ -44,7 +48,8 @@ val dataset = arrayListOf(
         email = "daniel@gmail.com",
         address = "Rajshahi",
         jobTitle = "DevOps Engineer",
-        salary = "65000"
+        salary = "65000",
+        divisions = "Rajshahi"
     ),
     Employee(
         name = "Emma Wilson",
@@ -53,7 +58,8 @@ val dataset = arrayListOf(
         email = "emma@gmail.com",
         address = "Barisal",
         jobTitle = "QA Engineer",
-        salary = "50000"
+        salary = "50000",
+        divisions = "Barisal"
     ),
     Employee(
         name = "Liam Miller",
@@ -62,7 +68,8 @@ val dataset = arrayListOf(
         email = "liam@gmail.com",
         address = "Mymensingh",
         jobTitle = "Product Manager",
-        salary = "62000"
+        salary = "62000",
+        divisions = "Mymensingh"
     ),
     Employee(
         name = "Olivia Anderson",
@@ -71,7 +78,8 @@ val dataset = arrayListOf(
         email = "olivia@gmail.com",
         address = "Rangpur",
         jobTitle = "Graphic Designer",
-        salary = "48000"
+        salary = "48000",
+        divisions = "Rangpur"
     ),
     Employee(
         name = "Noah Thomas",
@@ -80,7 +88,8 @@ val dataset = arrayListOf(
         email = "noah@gmail.com",
         address = "Comilla",
         jobTitle = "Content Writer",
-        salary = "46000"
+        salary = "46000",
+        divisions = "Comilla"
     ),
     Employee(
         name = "Ava Jackson",
@@ -89,7 +98,8 @@ val dataset = arrayListOf(
         email = "ava@gmail.com",
         address = "Gazipur",
         jobTitle = "Marketing Manager",
-        salary = "61000"
+        salary = "61000",
+        divisions = "Gazipur"
     ),
     Employee(
         name = "Isabella White",
@@ -98,7 +108,8 @@ val dataset = arrayListOf(
         email = "isabella@gmail.com",
         address = "Narayanganj",
         jobTitle = "Business Analyst",
-        salary = "64000"
+        salary = "64000",
+        divisions = "Narayanganj"
     ),
     Employee(
         name = "Mason Harris",
@@ -107,7 +118,8 @@ val dataset = arrayListOf(
         email = "mason@gmail.com",
         address = "Bogra",
         jobTitle = "HR Manager",
-        salary = "59000"
+        salary = "59000",
+        divisions = "Bogra"
     ),
     Employee(
         name = "Sophia Martin",
@@ -116,7 +128,8 @@ val dataset = arrayListOf(
         email = "sophia@gmail.com",
         address = "Tongi",
         jobTitle = "IT Support",
-        salary = "45000"
+        salary = "45000",
+        divisions = "Tongi"
     ),
     Employee(
         name = "James Lee",
@@ -125,7 +138,8 @@ val dataset = arrayListOf(
         email = "james@gmail.com",
         address = "Savar",
         jobTitle = "Network Engineer",
-        salary = "53000"
+        salary = "53000",
+        divisions = "Savar"
     ),
     Employee(
         name = "Charlotte Martinez",
@@ -134,7 +148,8 @@ val dataset = arrayListOf(
         email = "charlotte@gmail.com",
         address = "Narsingdi",
         jobTitle = "Software Tester",
-        salary = "47000"
+        salary = "47000",
+        divisions = "Narsingdi"
     ),
     Employee(
         name = "Benjamin Clark",
@@ -143,7 +158,8 @@ val dataset = arrayListOf(
         email = "benjamin@gmail.com",
         address = "Sirajganj",
         jobTitle = "Database Administrator",
-        salary = "68000"
+        salary = "68000",
+        divisions = "Sirajganj"
     ),
     Employee(
         name = "Mia Rodriguez",
@@ -152,7 +168,8 @@ val dataset = arrayListOf(
         email = "mia@gmail.com",
         address = "Dinajpur",
         jobTitle = "Web Developer",
-        salary = "52000"
+        salary = "52000",
+        divisions = "Dinajpur"
     ),
     Employee(
         name = "Elijah Lewis",
@@ -161,7 +178,8 @@ val dataset = arrayListOf(
         email = "elijah@gmail.com",
         address = "Jessore",
         jobTitle = "Mobile Developer",
-        salary = "54000"
+        salary = "54000",
+        divisions = "Jessore"
     ),
     Employee(
         name = "Amelia Walker",
@@ -170,7 +188,8 @@ val dataset = arrayListOf(
         email = "amelia@gmail.com",
         address = "Jamalpur",
         jobTitle = "System Administrator",
-        salary = "57000"
+        salary = "57000",
+        divisions = "Jamalpur"
     ),
     Employee(
         name = "Lucas Hall",
@@ -179,7 +198,8 @@ val dataset = arrayListOf(
         email = "lucas@gmail.com",
         address = "Pabna",
         jobTitle = "Security Analyst",
-        salary = "63000"
+        salary = "63000",
+        divisions = "Pabna"
     ),
     Employee(
         name = "Harper Allen",
@@ -188,7 +208,8 @@ val dataset = arrayListOf(
         email = "harper@gmail.com",
         address = "Sherpur",
         jobTitle = "Technical Writer",
-        salary = "49000"
+        salary = "49000",
+        divisions = "Sherpur"
     ),
     Employee(
         name = "Henry Scott",
@@ -197,7 +218,8 @@ val dataset = arrayListOf(
         email = "henry@gmail.com",
         address = "Brahmanbaria",
         jobTitle = "Operations Manager",
-        salary = "67000"
+        salary = "67000",
+        divisions = "Brahmanbaria"
     ),
     Employee(
         name = "Evelyn Young",
@@ -206,7 +228,8 @@ val dataset = arrayListOf(
         email = "evelyn@gmail.com",
         address = "Faridpur",
         jobTitle = "Scrum Master",
-        salary = "62000"
+        salary = "62000",
+        divisions = "Faridpur"
     ),
     Employee(
         name = "Alexander King",
@@ -215,7 +238,8 @@ val dataset = arrayListOf(
         email = "alexander@gmail.com",
         address = "Manikganj",
         jobTitle = "Solutions Architect",
-        salary = "75000"
+        salary = "75000",
+        divisions = "Manikganj"
     ),
     Employee(
         name = "Abigail Wright",
@@ -224,7 +248,8 @@ val dataset = arrayListOf(
         email = "abigail@gmail.com",
         address = "Madaripur",
         jobTitle = "IT Consultant",
-        salary = "71000"
+        salary = "71000",
+        divisions = "Madaripur"
     ),
     Employee(
         name = "Jack Lopez",
@@ -233,7 +258,8 @@ val dataset = arrayListOf(
         email = "jack@gmail.com",
         address = "Magura",
         jobTitle = "Cloud Engineer",
-        salary = "74000"
+        salary = "74000",
+        divisions = "Magura"
     ),
     Employee(
         name = "Mia Hill",
@@ -242,7 +268,8 @@ val dataset = arrayListOf(
         email = "miahill@gmail.com",
         address = "Tangail",
         jobTitle = "Frontend Developer",
-        salary = "56000"
+        salary = "56000",
+        divisions = "Tangail"
     ),
     Employee(
         name = "Logan Green",
@@ -251,7 +278,8 @@ val dataset = arrayListOf(
         email = "logangreen@gmail.com",
         address = "Gopalganj",
         jobTitle = "Backend Developer",
-        salary = "59000"
+        salary = "59000",
+        divisions = "Gopalganj"
     ),
     Employee(
         name = "Sofia Adams",
@@ -260,7 +288,8 @@ val dataset = arrayListOf(
         email = "sofiaadams@gmail.com",
         address = "Munshiganj",
         jobTitle = "Fullstack Developer",
-        salary = "62000"
+        salary = "62000",
+        divisions = "Munshiganj"
     ),
     Employee(
         name = "William Nelson",
@@ -269,7 +298,8 @@ val dataset = arrayListOf(
         email = "williamnelson@gmail.com",
         address = "Netrakona",
         jobTitle = "Technical Lead",
-        salary = "76000"
+        salary = "76000",
+        divisions = "Netrakona"
     )
 
 )

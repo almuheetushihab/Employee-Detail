@@ -1,7 +1,6 @@
 package com.example.emoloyeedetail
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.transition.Visibility
 import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 
-import kotlinx.coroutines.Delay
 
 class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     private val viewModel: EmployeeViewModel by viewModels()
@@ -46,24 +43,12 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
             recyclerView.adapter = adapter
             binding.loadingId.root.visibility = View.GONE
             binding.employeeRecyclerView.visibility = View.VISIBLE
-        })
 
+        })
     }
 
     override fun onItemClick(employee: Employee) {
-
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
-
     }
 }
-
-
-
-
-
-
-
-
-
-

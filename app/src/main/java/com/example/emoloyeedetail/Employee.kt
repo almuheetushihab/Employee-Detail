@@ -9,5 +9,6 @@ data class Employee(
     val email: String,
     val address: String,
     val jobTitle: String,
-    val salary: String
+    val salary: String,
+    val divisions: String
 ):Serializable
