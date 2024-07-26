@@ -25,6 +25,18 @@
         <argument
             android:name="data"
             app:argType="com.example.emoloyeedetail.Employee" />
+        <action
+            android:id="@+id/action_SecondFragment_to_employeeDetail2"
+            app:destination="@id/employeeDetail2" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetail2"
+        android:name="com.example.emoloyeedetail.EmployeeDetail"
+        android:label="employee_detail"
+        tools:layout="@layout/employee_detail" >
+        <argument
+            android:name="data"
+            app:argType="com.example.emoloyeedetail.Employee" />
     </fragment>
 
 </navigation>

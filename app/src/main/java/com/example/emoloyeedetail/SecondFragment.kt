@@ -49,7 +49,8 @@ class SecondFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     }
 
     override fun onItemClick(employee: Employee) {
-//        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
-//        findNavController().navigate(action)
+        val action = SecondFragmentDirections.actionSecondFragmentToEmployeeDetail2(employee)
+        findNavController().navigate(action)
+
     }
 }
