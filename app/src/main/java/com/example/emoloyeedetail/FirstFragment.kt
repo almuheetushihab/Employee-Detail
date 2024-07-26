@@ -14,9 +14,9 @@ import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 
 
-class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
+class FirstFragment : Fragment(), DivisionAdapter.ItemClickListener {
     private val viewModel: EmployeeViewModel by viewModels()
-    private lateinit var adapter: EmployeeAdapter
+    private lateinit var adapter: DivisionAdapter
     private lateinit var binding: FragmentFirstBinding
 
 
@@ -34,21 +34,24 @@ class FirstFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView: RecyclerView = binding.employeeRecyclerView
+        val recyclerView: RecyclerView = binding.divisionRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.getItems()
         viewModel.items.observe(viewLifecycleOwner, Observer {
-            adapter = EmployeeAdapter(it, this)
+            adapter = DivisionAdapter(it, this)
             recyclerView.adapter = adapter
             binding.loadingId.root.visibility = View.GONE
-            binding.employeeRecyclerView.visibility = View.VISIBLE
+            binding.divisionRecyclerView.visibility = View.VISIBLE
 
         })
+
     }
 
     override fun onItemClick(employee: Employee) {
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
+
+
     }
 }

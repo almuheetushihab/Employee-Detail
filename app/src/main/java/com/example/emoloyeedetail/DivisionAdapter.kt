@@ -17,7 +17,7 @@ class DivisionAdapter(
         val employeeDivisions: TextView
 
         init {
-            employeeDivisions = view.findViewById(R.id.tv_employee_division)
+            employeeDivisions = view.findViewById(R.id.tv_employee_division_name)
         }
     }
 
@@ -38,12 +38,12 @@ class DivisionAdapter(
         position: Int
     ) {
         val employee = dataset[position]
-
         viewHolder.employeeDivisions.text = employee.divisions
 
-        viewHolder.itemView.setOnClickListener {
-            listener.onItemClick(employee)
-        }
+    viewHolder.itemView.setOnClickListener{
+        listener.onItemClick(employee)
+    }
+
     }
 
     override fun getItemCount(): Int {

@@ -5,18 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.navArgs
-import com.bumptech.glide.Glide
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.emoloyeedetail.databinding.FragmentFirstBinding
 import com.example.emoloyeedetail.databinding.FragmentSecondBinding
+import com.example.emoloyeedetail.viewmodel.EmployeeViewModel
 
-class SecondFragment : Fragment() {
-    private val args: SecondFragmentArgs by navArgs()
+
+class SecondFragment : Fragment(), EmployeeAdapter.ItemClickListener {
+    private val viewModel: EmployeeViewModel by viewModels()
+    private lateinit var adapter: EmployeeAdapter
     private lateinit var binding: FragmentSecondBinding
 
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false)
@@ -29,21 +35,21 @@ class SecondFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        val employee = args.data
-        employee.let {
-            Glide.with(requireContext())
-                .load(employee.image)
-                .circleCrop()
-                .into(binding.ivEmployeeImgId)
+        val recyclerView: RecyclerView = binding.employeeRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-            binding.tvEmployeeName.text = employee.name
-            binding.tvEmployeePhone.text = employee.phone
-            binding.tvEmployeeEmail.text = employee.email
-            binding.tvEmployeeAddress.text = employee.address
-            binding.tvEmployeeJobTitle.text = employee.jobTitle
-            binding.tvEmployeeSalary.text = employee.salary
-            binding.tvEmployeeDivision.text = employee.divisions
+        viewModel.getItems()
+        viewModel.items.observe(viewLifecycleOwner, Observer {
+            adapter = EmployeeAdapter(it, this)
+            recyclerView.adapter = adapter
+            binding.loadingId.root.visibility = View.GONE
+            binding.employeeRecyclerView.visibility = View.VISIBLE
 
-        }
+        })
+    }
+
+    override fun onItemClick(employee: Employee) {
+//        val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
+//        findNavController().navigate(action)
     }
 }

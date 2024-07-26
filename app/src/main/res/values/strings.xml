@@ -50,5 +50,7 @@
     <string name="employee_profile_image">Employee profile image</string>
     <string name="textviewss">TextView</string>
     <string name="button">Button</string>
-    <string name="data_found">Data Not Found…</string>
+    <string name="loading">Loading…</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

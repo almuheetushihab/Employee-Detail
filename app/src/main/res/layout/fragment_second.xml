@@ -6,122 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employee_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-16dp">
-
-        <ImageView
-            android:id="@+id/iv_employee_img_id"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/employee_profile_image"
-            android:src="@drawable/employee_details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_employee_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/font"
-            android:text="@string/textview"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/iv_employee_img_id"
-            app:layout_constraintStart_toStartOf="@+id/iv_employee_img_id"
-            app:layout_constraintTop_toBottomOf="@+id/iv_employee_img_id"
-            tools:text="John Doe" />
-
-        <TextView
-            android:id="@+id/tv_employee_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/font"
-            android:text="@string/textviews"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_name"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_name"
-            tools:text="+7483874902" />
-
-        <TextView
-            android:id="@+id/tv_employee_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/font"
-            android:text="@string/sss"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_phone"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_phone"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_phone"
-            tools:text="john@gmail.com" />
-
-        <TextView
-            android:id="@+id/tv_employee_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/font"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_email"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_email"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_email"
-            tools:text="Dhaka" />
-
-        <TextView
-            android:id="@+id/tv_employee_jobTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/font"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_address"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_address"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_address"
-            tools:text="Software Engineer" />
-
-        <TextView
-            android:id="@+id/tv_employee_salary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/font"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_jobTitle"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_jobTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_jobTitle"
-            tools:text="50000" />
-
-        <TextView
-            android:id="@+id/tv_employee_division"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/font"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_salary"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_salary"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_salary"
-            tools:text="Dhaka" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/loading_id"
+        layout="@layout/activity_loading"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
