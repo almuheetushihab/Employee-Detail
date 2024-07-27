@@ -38,11 +38,16 @@ class EmployeeDetail : Fragment() {
 
             binding.tvEmployeeName.text = employee.name
             binding.tvEmployeePhone.text = employee.phone
-            binding.tvEmployeeEmail.text = employee.email
-            binding.tvEmployeeAddress.text = employee.address
-            binding.tvEmployeeJobTitle.text = employee.jobTitle
-            binding.tvEmployeeSalary.text = employee.salary
-            binding.tvEmployeeDivision.text = employee.divisions
+            binding.email.tvKey.text = requireContext().getString(R.string.email)
+            binding.email.tvValue.text = employee.email
+            binding.address.tvKey.text = requireContext().getString(R.string.address)
+            binding.address.tvValue.text = employee.address
+            binding.jobTitle.tvKey.text = requireContext().getString(R.string.jobTitle)
+            binding.jobTitle.tvValue.text = employee.jobTitle
+            binding.salary.tvKey.text = requireContext().getString(R.string.salary)
+            binding.salary.tvValue.text = employee.salary
+            binding.division.tvKey.text = requireContext().getString(R.string.division)
+            binding.division.tvValue.text = employee.divisions
 
         }
     }

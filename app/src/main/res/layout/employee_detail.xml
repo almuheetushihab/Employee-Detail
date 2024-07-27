@@ -52,165 +52,58 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_employee_name"
             tools:text="+7483874902" />
 
-        <LinearLayout
-            android:id="@+id/linear_layout_employee_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/tv_employee_phone"
-            app:layout_constraintStart_toStartOf="@+id/tv_employee_phone"
-            app:layout_constraintTop_toBottomOf="@+id/tv_employee_phone">
-
-            <TextView
-                android:id="@+id/tv_employee_email_id"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/font"
-                android:text="@string/email"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_employee_email"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/font"
-                android:text="@string/sss"
-                android:textSize="24sp"
-                tools:text="john@gmail.com" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_employee_address"
+        <include
+            android:id="@+id/email"
+            layout="@layout/employee_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linear_layout_employee_email"
-            app:layout_constraintStart_toStartOf="@+id/linear_layout_employee_email"
-            app:layout_constraintTop_toBottomOf="@+id/linear_layout_employee_email">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_employee_phone"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <TextView
-                android:id="@+id/tv_employee_address_id"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/font"
-                android:text="@string/address"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_employee_address"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/font"
-                android:text=""
-                android:textSize="24sp"
-                tools:text="Dhaka" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_employee_jobTitle"
+        <include
+            android:id="@+id/address"
+            layout="@layout/employee_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout_employee_address"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout_employee_address"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_employee_address">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/font"
-                android:text="@string/jobTitle"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_employee_jobTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/font"
-                android:text=""
-                android:textSize="24sp"
-                tools:text="Software Engineer" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_employee_salary"
+        <include
+            android:id="@+id/jobTitle"
+            layout="@layout/employee_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout_employee_jobTitle"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout_employee_jobTitle"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_employee_jobTitle">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-
-            <TextView
-                android:id="@+id/tv_employee_salary_id"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/font"
-                android:text="@string/salary"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_employee_salary"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/font"
-                android:text=""
-                android:textSize="24sp"
-                tools:text="50000" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_employee_division"
+        <include
+            android:id="@+id/salary"
+            layout="@layout/employee_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout_employee_salary"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout_employee_salary"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_employee_salary">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jobTitle"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-
-            <TextView
-                android:id="@+id/tv_employee_division_id"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/font"
-                android:text="@string/division"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tv_employee_division"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/font"
-                android:text=""
-                android:textSize="24sp"
-                tools:text="Dhaka" />
-
-        </LinearLayout>
+        <include
+            android:id="@+id/division"
+            layout="@layout/employee_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/salary"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
