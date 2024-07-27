@@ -46,7 +46,7 @@ class EmployeeDetail : Fragment() {
             binding.jobTitle.tvValue.text = employee.jobTitle
             binding.salary.tvKey.text = requireContext().getString(R.string.salary)
             binding.salary.tvValue.text = employee.salary
-            binding.division.tvKey.text = requireContext().getString(R.string.division)
+            binding.division.tvKey.text = requireContext().getString(R.string.divisions)
             binding.division.tvValue.text = employee.divisions
 
         }

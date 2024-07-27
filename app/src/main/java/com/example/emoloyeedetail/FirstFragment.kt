@@ -45,13 +45,10 @@ class FirstFragment : Fragment(), DivisionAdapter.ItemClickListener {
             binding.divisionRecyclerView.visibility = View.VISIBLE
 
         })
-
     }
 
     override fun onItemClick(employee: Employee) {
         val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment5(employee)
         findNavController().navigate(action)
-
-
     }
 }
