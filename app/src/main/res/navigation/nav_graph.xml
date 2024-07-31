@@ -29,7 +29,7 @@
             android:id="@+id/action_SecondFragment_to_employeeDetail2"
             app:destination="@id/employeeDetail2" />
     </fragment>
-    <fragment
+        <fragment
         android:id="@+id/employeeDetail2"
         android:name="com.example.emoloyeedetail.EmployeeDetail"
         android:label="Employee Details"
