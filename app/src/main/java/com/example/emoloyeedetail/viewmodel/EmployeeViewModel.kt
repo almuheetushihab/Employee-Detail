@@ -17,9 +17,7 @@ class EmployeeViewModel : ViewModel() {
     fun getItems() {
         val handler = Handler()
         handler.postDelayed({
-
             _items.value = dataset
-
         }, 2000)
     }
 }
